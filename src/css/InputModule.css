@@ -8,7 +8,7 @@
 input{
     padding-left: 7px;
     font-size: 1.25rem;
-    margin:1rem auto;
+    margin:.5rem auto;
     border-radius: .3rem;
     line-height: 1.5rem;
     background-color: #F1F9F8;
@@ -20,7 +20,7 @@ input.url{
 } 
 
 input.setting{
-    margin:1rem 1rem;
+    margin:.5rem 1rem;
     width:22%;
 }
 button.submit{
@@ -33,6 +33,7 @@ button.submit{
     background-color: transparent;
     border:3px solid green;
     color: green;
+    margin-top: .5rem;
 }
 button.submit:hover{
     background-color: green;
