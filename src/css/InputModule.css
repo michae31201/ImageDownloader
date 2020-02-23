@@ -1,0 +1,30 @@
+
+.input-module{
+    width:50%;
+}
+
+input{
+    padding-left: 7px;
+    font-size: 1.125rem;
+    border-radius: .3rem;
+    background-color: #F1F9F8;
+}
+
+input.url{
+    width:100%;
+    line-height: 1.8;
+} 
+
+input.setting{
+    margin:.3rem;
+    width:22%;
+    line-height: 1.2;
+}
+button.submit{
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    padding: .5rem 1rem;
+}

@@ -1,0 +1,13 @@
+
+.img-module{
+    width:66%;
+}
+.img-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.img-count{
+    font-size: 1.125rem;
+    font-weight: 600;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
+import '../css/ImgCard.css';
 
-class ShowIMG extends React.Component{
+class ImgCard extends React.Component{
   
   componentWillUnmount(){
     const {url} = this.props;
@@ -20,4 +21,4 @@ class ShowIMG extends React.Component{
   }
 }
 
-export default ShowIMG;
+export default ImgCard;
