@@ -6,9 +6,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F5F8FA;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+header{
+  background-image: linear-gradient(-225deg, rgb(100, 65, 165) 0%, rgb(141, 11, 147) 50%, rgb(50, 21, 117) 100%);
+  color:white;
+  padding: 0 0 100px;
+}
+h1{
+  margin-top: 0;
+}
+.head-text{
+  padding:2rem;
+}
+html{
+  min-height: 100%;
 }

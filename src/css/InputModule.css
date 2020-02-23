@@ -1,12 +1,16 @@
 
 .input-module{
-    width:50%;
+    margin-bottom: 1.5rem;
+    margin-top: -100px;
+    
 }
 
 input{
     padding-left: 7px;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+    margin:1rem auto;
     border-radius: .3rem;
+    line-height: 1.5rem;
     background-color: #F1F9F8;
 }
 
@@ -16,15 +20,22 @@ input.url{
 } 
 
 input.setting{
-    margin:.3rem;
+    margin:1rem 1rem;
     width:22%;
-    line-height: 1.2;
 }
 button.submit{
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: .025em;
+    letter-spacing: .1em;
     padding: .5rem 1rem;
+    background-color: transparent;
+    border:3px solid green;
+    color: green;
+}
+button.submit:hover{
+    background-color: green;
+    border:2px solid lightgreen;
+    color: white;
 }
