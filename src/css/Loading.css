@@ -1,0 +1,23 @@
+.loading{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.loading-circle{
+    width: 2rem;
+    height: 2rem;
+    padding-right: 1rem;
+    vertical-align: middle;
+    animation: circle 2s linear infinite;
+    transform-origin: 35% 49%;
+    transition-delay:0s;
+}
+
+@keyframes circle{
+    from{
+        transform: rotate(0deg);
+        
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
