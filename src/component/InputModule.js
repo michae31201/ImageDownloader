@@ -4,7 +4,7 @@ import '../css/InputModule.css';
 class InputModule extends React.Component{
     state = {
         url:"https://www.jkforum.net/thread-10880560-1-1.html",
-        tag:"a",
+        tag:"img",
         attr:"file",
         type:"jpg",
     }

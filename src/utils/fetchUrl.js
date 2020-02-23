@@ -4,7 +4,7 @@ async function fetchUrl(url){
     const crosUrl = 'https://cors-anywhere.herokuapp.com/';
     let request = await fetch(`${crosUrl}${url}`);
     let text = await request.text();
-    console.log(text)
+    //console.log(text)
     return text;
   }catch(err){
     console.error("Fail to Fetch or response",err)
