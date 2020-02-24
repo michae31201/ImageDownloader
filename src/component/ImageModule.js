@@ -23,7 +23,6 @@ class ImageModule extends React.Component{
         return(
             <div className="container img-module">
                 <div className="img-count">Found {files.length} images</div>
-                <button onClick={this.zoomin}>Zoom </button>
                 <div className="img-group">
                 {
                     files.map((file, index) => (

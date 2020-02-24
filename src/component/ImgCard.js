@@ -24,7 +24,7 @@ class ImgCard extends React.Component{
     return(
       <div className='img-card'>
         <a href={`${url}`} download>
-         <img src = {`${url}`} alt = {`${url}`} data-src = {`${url}`}/>
+         <img className="lazy" data-src={`${url}`} alt={`${url}`} loading="lazy"/>
          <div className="zoom-in" onClick={this.zoomInHandler}>
           <img src={zoomInImg} alt="zoom-in-img"/>
          </div>
