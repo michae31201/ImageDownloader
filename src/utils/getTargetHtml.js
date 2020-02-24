@@ -1,17 +1,17 @@
-async function fetchUrl(url){
-  console.log(`preper to fetch ${url} `);
+async function getTargetHTML(url){
+  console.log(`Prepare to get ${url} `);
   try{
     const crosUrl = 'https://cors-anywhere.herokuapp.com/';
-    let request = await fetch(`${crosUrl}${url}`);
-    let text = await request.text();
+    let response = await fetch(`${crosUrl}${url}`);
+    let htmlText = await response.text();
     //console.log(text)
-    return text;
+    return htmlText;
   }catch(err){
     console.error("Fail to Fetch or response",err)
   }
 }
 
-export default fetchUrl;
+export default getTargetHTML;
 
 /*
 async function fetchUrl(url,tag,attr,imgtype){

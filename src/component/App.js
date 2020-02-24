@@ -2,9 +2,9 @@ import React from "react";
 import InputModule from "./InputModule";
 import ImageModule from "./ImageModule";
 import Loading from "./Loading"
-import fetchUrl from '../utils/fetchUrl';
-import parseResToDom from '../utils/parseResToDom';
-import toBlob from '../utils/toBlob';
+import getTargetHtml from '../utils/getTargetHtml';
+import getTargetNodes from '../utils/getTargetNodes';
+import getBlobUrl from '../utils/getBlobUrl';
 import "../css/App.css";
 
 class App extends React.Component {
@@ -41,17 +41,16 @@ class App extends React.Component {
 
   fetchImgFiles = async ({url, tag, attr, type}) =>{
     this.setState({files:[],status:"開始抓取目標網頁..."});
-    let responseTxt = await fetchUrl(url);
+    let htmlTXT = await getTargetHtml(url);
     this.setState({status:"網頁已獲取，開始抓取目標圖檔..."});
-    let nodes = await parseResToDom(responseTxt, tag, attr, type);
+    let nodes = await getTargetNodes(htmlTXT, tag, attr, type);
     this.setState({status:`${nodes.length} 個圖檔已獲取，轉換中...`});
-    let files = await toBlob(nodes);
+    let files = await getBlobUrl(nodes);
     
     this.setState({ 
       files,
       status:null,
-     });
-        
+     });      
   }
 
   render() {
