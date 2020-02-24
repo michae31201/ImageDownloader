@@ -2,12 +2,28 @@
 .img-module{
     width:66%;
 }
-.img-group{
+.img-body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap
 }
+.img-head{
+    position: relative;
+}
 .img-count{
     font-size: 1.125rem;
     font-weight: 600;
+}
+button.clear{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: .5rem;
+    color: red;
+    border: 3px solid red;
+}
+button.clear:hover{
+    background-color: red;
+    border:2px solid rgb(250, 117, 117);
+    color: white;
 }

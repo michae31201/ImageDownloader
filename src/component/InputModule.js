@@ -3,7 +3,7 @@ import '../css/InputModule.css';
 
 class InputModule extends React.Component{
     state = {
-        url:"https://www.jkforum.net/thread-10880560-1-1.html",
+        url:"https://www.jkforum.net/thread-10880560-1-1.html",//
         tag:"img",
         attr:"file",
         type:"jpg",
@@ -19,26 +19,19 @@ class InputModule extends React.Component{
         const {url,tag,attr,type} = this.state;
 
         if(url && tag && attr && type){
-            this.props.fetchImgFiles(this.state);
+            this.props.getImgFiles(this.state);
         }
     };
-    /* clear = () => {
-        const { files } = this.state;
-        files.forEach(file => {
-          window.URL.revokeObjectURL(file);
-        });
-        this.setState({ url: "", files: [] });
-      };
-    */
+    
     render(){
         const {url,tag,attr,type} = this.state;
         return(
             <div className='container input-module'>
-                <input type="search" className="url" id="url" value={url} onChange={this.inputHandler}/>
+                <input type="search" className="url" id="url" value={url} onChange={this.inputHandler} placeholder="Url"/>
                 <br />
-                <input type="search" className="setting" id="tag" value={tag} onChange={this.inputHandler}/>
-                <input type="search" className="setting" id="attr"value={attr} onChange={this.inputHandler}/>
-                <input type="search" className="setting" id="type" value={type} onChange={this.inputHandler}/>
+                <input type="search" className="setting" id="tag" value={tag} onChange={this.inputHandler} placeholder="tag name"/>
+                <input type="search" className="setting" id="attr"value={attr} onChange={this.inputHandler} placeholder="tag attribute"/>
+                <input type="search" className="setting" id="type" value={type} onChange={this.inputHandler} placeholder="image type"/>
                 <br />
                 <button className="submit" onClick={this.submit}>submit</button>
                 {/*<button onClick={this.clear}>clear</button>*/}

@@ -24,13 +24,7 @@ input.setting{
     width:22%;
 }
 button.submit{
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    padding: .5rem 1rem;
-    background-color: transparent;
+    font-size: 1.1rem;  
     border:3px solid green;
     color: green;
     margin-top: .5rem;

@@ -17,13 +17,23 @@ class ImageModule extends React.Component{
             this.setState({image:null});
         }
     }
+    clearImg = () =>{
+        this.props.clearImgFiles();
+    }
+
     render(){
         const {image} = this.state;
         const {files} = this.props;
         return(
             <div className="container img-module">
-                <div className="img-count">Found {files.length} images</div>
-                <div className="img-group">
+                <div className="img-head">
+                    <p className="img-count">Found {files.length} images</p>
+                    {
+                        files.length?
+                            <button className="clear" onClick={this.clearImg}>clear</button>:null
+                    }
+                </div>
+                <div className="img-body">
                 {
                     files.map((file, index) => (
                         <ImgCard key={index} url={file} zoomin={this.zoomin}/>

@@ -14,3 +14,12 @@ div.container{
   background-color:white;
   width:768px;
 }
+
+button{
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: .5rem 1rem;
+  background-color: transparent;
+}

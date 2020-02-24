@@ -39,7 +39,7 @@ class App extends React.Component {
       }
   }
 
-  fetchImgFiles = async ({url, tag, attr, type}) =>{
+  getImgFiles = async ({url, tag, attr, type}) =>{
     this.setState({files:[],status:"開始抓取目標網頁..."});
     let htmlTXT = await getTargetHtml(url);
     this.setState({status:"網頁已獲取，開始抓取目標圖檔..."});
@@ -52,16 +52,23 @@ class App extends React.Component {
       status:null,
      });      
   }
-
+  clearImgFiles = () => {
+    const { files } = this.state;
+    files.forEach(file => {
+      window.URL.revokeObjectURL(file);
+    });
+    this.setState({ url: "", files: [] });
+  }
+  
   render() {
     const {files,status} = this.state;
     return (
       <div className="App">
-        <InputModule fetchImgFiles = {this.fetchImgFiles}/>
+        <InputModule getImgFiles = {this.getImgFiles}/>
         {
           status ? <Loading status = {status}/>:null
         }
-        <ImageModule files = {files}/>        
+        <ImageModule files = {files} clearImgFiles={this.clearImgFiles}/>        
       </div>
     );
   }
