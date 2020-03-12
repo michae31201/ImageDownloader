@@ -3,9 +3,9 @@ import '../css/InputModule.css';
 
 class InputModule extends React.Component{
     state = {
-        url:"https://www.jkforum.net/thread-10880560-1-1.html",//
+        url:"",//
         tag:"img",
-        attr:"file",
+        attr:"src",
         type:"jpg",
     }
 
@@ -31,7 +31,7 @@ class InputModule extends React.Component{
                 <br />
                 <input type="search" className="setting" id="tag" value={tag} onChange={this.inputHandler} placeholder="tag name"/>
                 <input type="search" className="setting" id="attr"value={attr} onChange={this.inputHandler} placeholder="tag attribute"/>
-                <input type="search" className="setting" id="type" value={type} onChange={this.inputHandler} placeholder="image type"/>
+                <input type="search" className="setting" id="type" value={type} onChange={this.inputHandler} placeholder="image type1,type2,..."/>
                 <br />
                 <button className="submit" onClick={this.submit}>submit</button>
                 {/*<button onClick={this.clear}>clear</button>*/}
