@@ -1,6 +1,7 @@
 async function getBlobUrl(urls){
-  const crosUrl = 'https://cors-anywhere.herokuapp.com/';
-  let requests = urls.map((url)=> fetch(`${crosUrl}${url}`));
+  //const crosUrl = 'https://cors-anywhere.herokuapp.com/';
+  //let requests = urls.map((url)=> fetch(`${crosUrl}${url}`));
+  let requests = urls.map((url)=> fetch(`/.netlify/functions/fetchImage?site=${url}`));
   let responses = await Promise.all(requests);
   let parseBlob = responses.map((response) => (response.blob()));
   let results = await Promise.all(parseBlob);

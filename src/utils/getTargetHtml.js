@@ -1,8 +1,9 @@
 async function getTargetHTML(url){
   console.log(`Prepare to get ${url} `);
   try{
-    const crosUrl = 'https://cors-anywhere.herokuapp.com/';
-    let response = await fetch(`${crosUrl}${url}`);
+    //const crosUrl = 'https://cors-anywhere.herokuapp.com/';
+    //let response = await fetch(`${crosUrl}${url}`);
+    let response = await fetch(`/.netlify/functions/fetchHtml?site=${url}`);
     let htmlText = await response.text();
     //console.log(text)
     return htmlText;
