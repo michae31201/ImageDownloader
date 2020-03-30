@@ -20,6 +20,14 @@ class ImageModule extends React.Component{
     clearImg = () =>{
         this.props.clearImgFiles();
     }
+    batchDownlod = () => {
+        let checkedImg = document.querySelectorAll("input[type='checkbox']:checked");
+        if(checkedImg.length){
+            checkedImg.forEach(img => {
+                setTimeout(()=>{img.closest("a").click();},0);
+            });
+        }
+    }
 
     render(){
         const {image} = this.state;
@@ -30,7 +38,10 @@ class ImageModule extends React.Component{
                     <p className="img-count">Found {files.length} images</p>
                     {
                         files.length?
-                            <button className="clear" onClick={this.clearImg}>clear</button>:null
+                            <>
+                                <button className="download" onClick={this.batchDownlod}>download checked image</button>
+                                <button className="clear" onClick={this.clearImg}>clear</button>
+                            </>:null
                     }
                 </div>
                 <div className="img-body">

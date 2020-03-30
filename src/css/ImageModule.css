@@ -24,6 +24,16 @@ button.clear{
 }
 button.clear:hover{
     background-color: red;
-    border:2px solid rgb(250, 117, 117);
+    border:3px solid rgb(250, 117, 117);
+    color: white;
+}
+button.download{
+    font-size: .5rem;
+    color: #0069D9;
+    border: 3px solid #0069D9;
+}
+button.download:hover{
+    background-color: #0069D9;
+    border:3px solid rgb(118, 178, 241);
     color: white;
 }

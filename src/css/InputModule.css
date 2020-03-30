@@ -31,6 +31,6 @@ button.submit{
 }
 button.submit:hover{
     background-color: green;
-    border:2px solid lightgreen;
+    border:3px solid lightgreen;
     color: white;
 }
