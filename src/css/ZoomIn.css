@@ -12,15 +12,14 @@
 
 .zoom-image{
     border: 2px solid black;
-    object-fit:contain;
-}
-
-.shape-width{
-    width: 60vw;
-    margin:auto;
-}
-
-.shape-height{
-    max-width: 60vh;
+    height: auto;
+    width: auto;
+    max-height: 85%;
+    max-width: 85%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
 }

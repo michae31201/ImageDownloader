@@ -13,10 +13,7 @@ class ImgCard extends React.Component{
     e.preventDefault();
 
     const {url} = this.props;
-    const imgNode = document.querySelector(`[src=${CSS.escape(url)}]`);
-    const shape = imgNode.naturalWidth - imgNode.naturalHeight >= 0?'shape-width':'shape-height';
-
-    this.props.zoomin({url,shape});
+    this.props.zoomin(url);
   }
 
   render(){
@@ -24,12 +21,11 @@ class ImgCard extends React.Component{
     return(
       <div className='img-card'>
         <a href={`${url}`} download>
-         <img className="lazy" data-src={`${url}`} alt={`${url}`} loading="lazy"/>
+         <img className="lazy" data-src={`${url}`} alt={`${url}`} loading="lazy" title="click to download"/>
          <div className="zoom-in" onClick={this.zoomInHandler}>
-          <img src={zoomInImg} alt="zoom-in-img"/>
+          <img src={zoomInImg} alt="zoom-in-img" title="zoom in"/>
          </div>
-        </a>
-        
+        </a>        
       </div>
     )
   }

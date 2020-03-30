@@ -7,9 +7,7 @@ class ZoomIn extends React.Component{
         const {closeZoom, image} = this.props;
         return(
             <div className="zoom-contanier" onClick={closeZoom}>            
-                <div className={image.shape}>
-                    <img className="zoom-image" src={image.url} alt=""/>          
-                </div>
+                <img className="zoom-image" src={image} alt=""/>          
             </div>
         ) 
     }
