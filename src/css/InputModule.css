@@ -5,7 +5,7 @@
     
 }
 
-input{
+input[type="search"]{
     padding-left: 7px;
     font-size: 1.25rem;
     margin:.5rem auto;

@@ -11,8 +11,9 @@
     position: relative;
 }
 .img-count{
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin: 0;
 }
 button.clear{
     position: absolute;
@@ -36,4 +37,13 @@ button.download:hover{
     background-color: #0069D9;
     border:3px solid rgb(118, 178, 241);
     color: white;
+}
+.selectall{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+input[type="checkbox"]{
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
 }
