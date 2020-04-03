@@ -6,6 +6,7 @@ import '../css/ImageModule.css';
 class ImageModule extends React.Component{
     state = {
         image:null,
+        imageCount:0,
     }
     zoomin = (image) => {
         this.setState({image});
@@ -24,7 +25,7 @@ class ImageModule extends React.Component{
         let checkedImg = document.querySelectorAll("a input[type='checkbox']:checked");
         if(checkedImg.length){
             for(let i = 0; i< checkedImg.length; i++){
-                (function(img){setTimeout(()=>{img.click()},i*500);})(checkedImg[i].closest("a"))
+                setTimeout(()=>{checkedImg[i].closest("a").click()},i*500);
             }
         }
     }
@@ -34,11 +35,17 @@ class ImageModule extends React.Component{
             image.checked = !image.checked;
         })
     }
+    countSelectImg = (e) => {
+        if(e.target.type === 'checkbox'){
+            const imageCount = document.querySelectorAll(".img-check:checked").length;
+            this.setState({imageCount});
+        }
+    }
     render(){
-        const {image} = this.state;
+        const {image,imageCount} = this.state;
         const {files} = this.props;
         return(
-            <div className="container img-module">
+            <div className="container img-module" onClick={this.countSelectImg}>
                 <div className="img-head">
                     <p className="img-count">Found {files.length} images</p>
                     {
@@ -47,10 +54,10 @@ class ImageModule extends React.Component{
                                 <br/>
                                 <label className="selectall">
                                     <input type="checkbox" onClick={this.selectAll}/>
-                                    select all images
+                                    Select all images
                                 </label>
                                 <br/>
-                                <button className="download" onClick={this.batchDownlod}>download checked image</button>
+                                <button className="download" onClick={this.batchDownlod}>download {imageCount} image</button>
                                 <button className="clear" onClick={this.clearImg}>clear</button>
                             </>:null
                     }
