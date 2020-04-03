@@ -15,7 +15,7 @@ async function getBlobUrl(urls){
 async function getFetchResponses(urls){
   let result = [];
   while(urls.length){
-    let tmp = urls.splice(0,10);
+    let tmp = urls.splice(0,30);
     let fetchArray = tmp.map(url => fetch(`/.netlify/functions/fetchImage?site=${url}`));
     result = result.concat(await Promise.all(fetchArray));
   }
