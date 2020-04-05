@@ -9,7 +9,7 @@ class ImageModule extends React.Component{
         imageCount:0,
     }
    
-    zoomin = (image) => {
+    setZoomInImg = (image) => {
         this.setState({image});
     }
     closeZoom = (e) => {
@@ -72,12 +72,12 @@ class ImageModule extends React.Component{
                 <div className="img-body">
                 {
                     files.map((file, index) => (
-                        <ImgCard key={index} url={file} index={index} zoomin={this.zoomin}/>
+                        <ImgCard key={index} url={file} index={index} setZoomInImg={this.setZoomInImg}/>
                     ))
                 }
                 </div>
                 {
-                    image ? <ZoomIn image={image} closeZoom={this.closeZoom}/> : null
+                    image ? <ZoomIn url={image} closeZoom={this.closeZoom}/> : null
                 }
             </div>
         )
