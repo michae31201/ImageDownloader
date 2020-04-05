@@ -8,6 +8,7 @@ class ImageModule extends React.Component{
         image:null,
         imageCount:0,
     }
+   
     zoomin = (image) => {
         this.setState({image});
     }
@@ -25,14 +26,20 @@ class ImageModule extends React.Component{
         let checkedImg = document.querySelectorAll("a input[type='checkbox']:checked");
         if(checkedImg.length){
             for(let i = 0; i< checkedImg.length; i++){
-                setTimeout(()=>{checkedImg[i].closest("a").click()},i*500);
+                checkedImg[i].closest("a").click();
+                if(i%10 === 0){
+                    await new Promise(resolve => {                    
+                        setTimeout(() => {resolve();},1000);
+                    })
+                }
             }
         }
     }
-    selectAll = () => {
+    selectAll = (e) => {
         let images = document.querySelectorAll("a input[type='checkbox']");
+
         images.forEach(image => {
-            image.checked = !image.checked;
+            image.checked = e.target.checked;
         })
     }
     countSelectImg = (e) => {
@@ -65,7 +72,7 @@ class ImageModule extends React.Component{
                 <div className="img-body">
                 {
                     files.map((file, index) => (
-                        <ImgCard key={index} url={file} zoomin={this.zoomin}/>
+                        <ImgCard key={index} url={file} index={index} zoomin={this.zoomin}/>
                     ))
                 }
                 </div>

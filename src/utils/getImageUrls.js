@@ -1,4 +1,4 @@
-async function getTargetNodes(htmlTxt,tag,attr,type){
+async function getImageUrls(htmlTxt,tag,attr,type){
     console.log(`Prepare to parse the response`);
     console.log(`Search target <${tag} ${attr}= ' * .${type}' >`);
     try{    
@@ -23,4 +23,4 @@ async function getTargetNodes(htmlTxt,tag,attr,type){
     }
 }
 
-export default getTargetNodes;
+export default getImageUrls;

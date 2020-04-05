@@ -3,8 +3,8 @@ import InputModule from "./InputModule";
 import ImageModule from "./ImageModule";
 import Loading from "./Loading"
 import getTargetHtml from '../utils/getTargetHtml';
-import getTargetNodes from '../utils/getTargetNodes';
-import getBlobUrl from '../utils/getBlobUrl';
+import getImageUrls from '../utils/getImageUrls';
+//import getBlobUrl from '../utils/getBlobUrl';
 import "../css/App.css";
 
 class App extends React.Component {
@@ -43,9 +43,9 @@ class App extends React.Component {
     this.setState({files:[],status:"開始抓取目標網頁..."});
     let htmlTXT = await getTargetHtml(url);
     this.setState({status:"網頁已獲取，開始抓取目標圖檔..."});
-    let nodes = await getTargetNodes(htmlTXT, tag, attr, type);
-    this.setState({status:`${nodes.length} 個圖檔已獲取，轉換中...`});
-    let files = await getBlobUrl(nodes);
+    let files = await getImageUrls(htmlTXT, tag, attr, type);
+    this.setState({status:`${files.length} 個圖檔已獲取，轉換中...`});
+    //let files = await getBlobUrl(nodes);
     
     this.setState({ 
       files,
@@ -53,11 +53,11 @@ class App extends React.Component {
      });      
   }
   clearImgFiles = () => {
-    const { files } = this.state;
+    /*const { files } = this.state;
     files.forEach(file => {
       window.URL.revokeObjectURL(file);
-    });
-    this.setState({ url: "", files: [] });
+    });*/
+    this.setState({files: [] });
   }
   
   render() {
