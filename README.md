@@ -13,6 +13,11 @@
 * JavaScript
 * React
 * Netlify lambda
+* Lazy loading
+
+### 待解決
+
+*無法抓取SPA網頁之圖片
 
 ### DEMO
 
