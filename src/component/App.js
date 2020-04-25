@@ -4,7 +4,6 @@ import ImageModule from "./ImageModule";
 import Loading from "./Loading";
 import getTargetHtml from "../utils/getTargetHtml";
 import getImageUrls from "../utils/getImageUrls";
-// import getBlobUrl from '../utils/getBlobUrl';
 import "../css/App.css";
 
 class App extends React.Component {
@@ -53,10 +52,6 @@ class App extends React.Component {
   };
 
   clearImgFiles = () => {
-    /* const { files } = this.state;
-    files.forEach(file => {
-      window.URL.revokeObjectURL(file);
-    }); */
     this.setState({ files: [] });
   };
 
