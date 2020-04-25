@@ -1,15 +1,16 @@
-async function getTargetHTML(url){
+async function getTargetHTML(url) {
   console.log(`Prepare to get ${url} `);
-  try{
-    //const crosUrl = 'https://cors-anywhere.herokuapp.com/';
-    //let response = await fetch(`${crosUrl}${url}`);
-    let response = await fetch(`/.netlify/functions/fetchHtml?site=${url}`);
-    let htmlText = await response.text();
-    //console.log(text)
-    return htmlText;
-  }catch(err){
-    console.error("Fail to Fetch or response",err)
+  let htmlText;
+  try {
+    // const crosUrl = 'https://cors-anywhere.herokuapp.com/';
+    // let response = await fetch(`${crosUrl}${url}`);
+    const response = await fetch(`/.netlify/functions/fetchHtml?site=${url}`);
+    htmlText = await response.text();
+    // console.log(text)
+  } catch (err) {
+    console.error("Fail to Fetch or response", err);
   }
+  return htmlText;
 }
 
 export default getTargetHTML;
