@@ -70,9 +70,9 @@ class ImageModule extends React.Component {
       >
         <div className="img-head">
           <p className="img-count">
-            Found
+            Found &nbsp;
             {files.length}
-            images
+            &nbsp; images
           </p>
           {files.length ? (
             <>
@@ -83,9 +83,9 @@ class ImageModule extends React.Component {
               </label>
               <br />
               <button type="button" className="download" onClick={this.batchDownlod}>
-                download
+                download &nbsp;
                 {imageCount}
-                image
+                &nbsp; image
               </button>
               <button type="button" className="clear" onClick={this.clearImg}>
                 clear
