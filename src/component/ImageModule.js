@@ -30,16 +30,17 @@ class ImageModule extends React.Component {
     const checkedImg = document.querySelectorAll("a input[type='checkbox']:checked");
     if (checkedImg.length) {
       for (let i = 0; i < checkedImg.length; i += 1) {
-        checkedImg[i].closest("a").click();
-        if (i % 10 === 0) {
-          await new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-            }, 1000);
-          });
-        }
+        await Promise.all([checkedImg[i].closest("a").click(), this.timeOut(i)]);
       }
     }
+  };
+
+  timeOut = (s) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, s * 500);
+    });
   };
 
   selectAll = (e) => {
