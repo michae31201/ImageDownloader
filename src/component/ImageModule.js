@@ -9,6 +9,13 @@ class ImageModule extends React.Component {
     imageCount: 0,
   };
 
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.files.length === 0) {
+      return { image: null, imageCount: 0 };
+    }
+    return null;
+  }
+
   setZoomInImg = (image) => {
     this.setState({ image });
   };
@@ -28,19 +35,20 @@ class ImageModule extends React.Component {
 
   batchDownlod = async () => {
     const checkedImg = document.querySelectorAll("a input[type='checkbox']:checked");
+    const downloadNode = document.createElement("a");
     if (checkedImg.length) {
       for (let i = 0; i < checkedImg.length; i += 1) {
-        await Promise.all([checkedImg[i].closest("a").click(), this.timeOut()]);
+        const { url, download } = checkedImg[i].closest("a");
+        const response = await fetch(url);
+        const imgBlob = await response.blob();
+        downloadNode.href = window.URL.createObjectURL(imgBlob);
+        downloadNode.setAttribute("download", download);
+        downloadNode.click();
+        window.URL.revokeObjectURL(imgBlob);
       }
     }
-  };
-
-  timeOut = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 1500);
-    });
+    downloadNode.remove();
+    alert(`Download ${checkedImg.length} image`);
   };
 
   selectAll = (e) => {
