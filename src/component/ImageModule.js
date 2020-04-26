@@ -38,8 +38,8 @@ class ImageModule extends React.Component {
     const downloadNode = document.createElement("a");
     if (checkedImg.length) {
       for (let i = 0; i < checkedImg.length; i += 1) {
-        const { url, download } = checkedImg[i].closest("a");
-        const response = await fetch(url);
+        const { href, download } = checkedImg[i].closest("a");
+        const response = await fetch(href);
         const imgBlob = await response.blob();
         downloadNode.href = window.URL.createObjectURL(imgBlob);
         downloadNode.setAttribute("download", download);
